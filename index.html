@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Digital - Filosofía para la vida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-active { background-color: #1e293b; border-left: 4px solid #3b82f6; color: white !important;}
+        
+        /* Smooth transitions */
+        .section-fade {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .iframe-container {
+            width: 100%;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex h-screen overflow-hidden">
+
+    <!-- Mobile Header -->
+    <div class="md:hidden fixed top-0 w-full bg-slate-900 text-white z-50 flex justify-between items-center p-4 shadow-md">
+        <h1 class="font-bold text-lg truncate">Portafolio Digital</h1>
+        <button id="mobile-menu-btn" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="bg-slate-800 text-gray-300 w-64 flex-shrink-0 flex flex-col h-full absolute md:relative z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out pt-16 md:pt-0 shadow-2xl md:shadow-none">
+        <div class="p-6 bg-slate-900">
+            <h2 class="text-white font-bold text-xl uppercase tracking-wider text-center">Filosofía</h2>
+            <p class="text-xs text-center text-slate-400 mt-1">Portafolio Digital</p>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-4">
+            <a href="#" onclick="navigateTo('caratula')" id="nav-caratula" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200 nav-active">
+                Carátula
+            </a>
+            <a href="#" onclick="navigateTo('lista-cotejo')" id="nav-lista-cotejo" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">
+                Lista de Cotejo
+            </a>
+            <a href="#" onclick="navigateTo('m1')" id="nav-m1" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 1</a>
+            <a href="#" onclick="navigateTo('m2')" id="nav-m2" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 2</a>
+            <a href="#" onclick="navigateTo('m3')" id="nav-m3" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 3</a>
+            <a href="#" onclick="navigateTo('m4')" id="nav-m4" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 4</a>
+            <a href="#" onclick="navigateTo('m5')" id="nav-m5" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 5</a>
+            <a href="#" onclick="navigateTo('m6')" id="nav-m6" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">Módulo 6</a>
+            <a href="#" onclick="navigateTo('reflexion')" id="nav-reflexion" class="nav-item flex items-center px-6 py-3 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors duration-200">
+                Reflexión Final
+            </a>
+        </nav>
+        <div class="p-4 text-xs text-center border-t border-slate-700 text-slate-500">
+            Universidad Rafael Landívar
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"></div>
+
+    <!-- Main Content -->
+    <main class="flex-1 h-full overflow-y-auto pt-16 md:pt-0 relative bg-gray-50">
+        <div class="max-w-5xl mx-auto p-4 md:p-8 pb-20">
+            
+            <!-- SECCIÓN: CARÁTULA -->
+            <section id="sec-caratula" class="content-section section-fade">
+                <div class="bg-white rounded-xl shadow-lg p-10 text-center border-t-8 border-blue-600 mt-4 md:mt-10 max-w-3xl mx-auto">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4">Portafolio Digital de Aprendizajes</h1>
+                    <h2 class="text-xl md:text-2xl font-semibold text-slate-600 mb-10">Curso: Filosofía para la vida</h2>
+                    
+                    <div class="space-y-6 text-left bg-gray-50 p-8 rounded-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:justify-between border-b pb-4">
+                            <span class="text-gray-500 font-medium uppercase text-sm tracking-wider">Estudiante</span>
+                            <span class="text-slate-800 font-bold text-lg">Jairo David Méndez Méndez</span>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:justify-between border-b pb-4">
+                            <span class="text-gray-500 font-medium uppercase text-sm tracking-wider">Universidad</span>
+                            <span class="text-slate-800 font-semibold">Universidad Rafael Landívar</span>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:justify-between border-b pb-4">
+                            <span class="text-gray-500 font-medium uppercase text-sm tracking-wider">Campus</span>
+                            <span class="text-slate-800 font-semibold">Campus San Luis Gonzaga de Zacapa</span>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:justify-between">
+                            <span class="text-gray-500 font-medium uppercase text-sm tracking-wider">Carrera</span>
+                            <span class="text-blue-600 font-bold">Ingeniería en Agronomía</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: LISTA DE COTEJO -->
+            <section id="sec-lista-cotejo" class="content-section hidden section-fade">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-800">Lista de Cotejo</h2>
+                    <p class="text-gray-500 mt-2">Resumen del estado de entrega de todas las tareas del portafolio.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-gray-200 text-slate-600 text-sm uppercase tracking-wide">
+                                    <th class="px-6 py-4 font-semibold">Módulo</th>
+                                    <th class="px-6 py-4 font-semibold">Tarea</th>
+                                    <th class="px-6 py-4 font-semibold text-center">Entregado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <!-- Módulo 1 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold border-b border-gray-100" rowspan="4">Módulo 1</td><td class="px-6 py-4">Veo, siento, pienso, me pregunto 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">Antes pensaba, ahora pienso 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">Antes pensaba, ahora pienso 2</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 border-b border-gray-100">PODCAST El tesoro de mi vida</td><td class="px-6 py-4 border-b border-gray-100 text-center font-bold text-slate-800">X</td></tr>
+                                
+                                <!-- Módulo 2 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold border-b border-gray-100" rowspan="2">Módulo 2</td><td class="px-6 py-4">Rutina Puente 3-2-1</td><td class="px-6 py-4 text-center font-bold text-slate-800">0</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 border-b border-gray-100">PÓSTER digital interactivo ¿Quién soy yo?</td><td class="px-6 py-4 border-b border-gray-100 text-center font-bold text-slate-800">X</td></tr>
+
+                                <!-- Módulo 3 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold border-b border-gray-100" rowspan="3">Módulo 3</td><td class="px-6 py-4">Conversación en papel 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">Conversación en papel 2</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 border-b border-gray-100">MAPA de relaciones familiares y sociales significativas</td><td class="px-6 py-4 border-b border-gray-100 text-center font-bold text-slate-800">X</td></tr>
+
+                                <!-- Módulo 4 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold border-b border-gray-100" rowspan="3">Módulo 4</td><td class="px-6 py-4">Toma de postura 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">0</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">Toma de postura 2</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 border-b border-gray-100">La esclavitud moderna</td><td class="px-6 py-4 border-b border-gray-100 text-center font-bold text-slate-800">X</td></tr>
+
+                                <!-- Módulo 5 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold border-b border-gray-100" rowspan="2">Módulo 5</td><td class="px-6 py-4">Sentimientos y opciones 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 border-b border-gray-100">ENTREVISTAS: Los límites de la vida para desarrollar proyectos...</td><td class="px-6 py-4 border-b border-gray-100 text-center font-bold text-slate-800">X</td></tr>
+
+                                <!-- Módulo 6 -->
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4 font-semibold" rowspan="3">Módulo 6</td><td class="px-6 py-4">Afuera y adentro 1</td><td class="px-6 py-4 text-center font-bold text-slate-800">0</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">Preferencias Apostólicas Universales</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                                <tr class="hover:bg-gray-50"><td class="px-6 py-4">PROYECTO DE INVESTIGACIÓN: Modos de entender...</td><td class="px-6 py-4 text-center font-bold text-slate-800">X</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 1 -->
+            <section id="sec-m1" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 1</h2>
+                </div>
+                <div class="space-y-8">
+                    <!-- Tarea 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Veo, siento, pienso, me pregunto 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/1.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarea 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Antes pensaba, ahora pienso 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/2.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarea 3 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Antes pensaba, ahora pienso 2</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/3.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Podcast (Spotify) -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">PODCAST El tesoro de mi vida</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container" style="border: none; background: transparent;">
+                                <!-- Reemplaza el src con el embed de Spotify -->
+                                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/5rZn29X6UgqLcG1tY3OW3u?utm_source=generator&si=88135ba6a09e40b1" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 2 -->
+            <section id="sec-m2" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 2</h2>
+                </div>
+                <div class="space-y-8">
+                    <!-- Tarea 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Rutina Puente 3-2-1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 border border-red-200">No Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/m2_tarea1.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Poster (Canva) -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">PÓSTER digital interactivo ¿Quién soy yo?</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <!-- Reemplaza el src con el embed de Canva -->
+                                <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAHSOnpM6gk/et-oBA9n8jslkfX8uXb0zw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAHSOnpM6gk&#x2F;et-oBA9n8jslkfX8uXb0zw&#x2F;view?utm_content=DAHSOnpM6gk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Presentación Lluvia de Ideas Interactivo Gris y Negro</a> de JAIRO DAVID MENDEZ MENDEZ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 3 -->
+            <section id="sec-m3" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 3</h2>
+                </div>
+                <div class="space-y-8">
+                    <!-- Tarea 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Conversación en papel 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/p1.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarea 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Conversación en papel 2</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <iframe src="./pdfs/p2.pdf" height="500px" width="100%" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mapa (Enlace web) -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">MAPA de relaciones familiares y sociales significativas</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                            <div class="iframe-container">
+                                <!-- Reemplaza el src con la URL de tu mapa -->
+                                <iframe src="https://coggle.it/diagram/apIuKvII4HjOysv2/t/jairo-david-m%C3%A9ndez-m%C3%A9ndez/nEv6KAuIBF9q_bT767o1zNqxLzYU4B5ux5IbS_J9M5w" height="500px" width="100%" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 4 -->
+            <section id="sec-m4" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 4</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Toma de postura 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 border border-red-200">No Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/m4_tarea1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Toma de postura 2</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/t2.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">La esclavitud moderna</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/s1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 5 -->
+            <section id="sec-m5" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 5</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Sentimientos y opciones 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/so1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">ENTREVISTAS: Los límites de la vida para desarrollar proyectos...</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/en1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: MÓDULO 6 -->
+            <section id="sec-m6" class="content-section hidden section-fade">
+                <div class="mb-8 border-b pb-4 border-gray-200">
+                    <h2 class="text-3xl font-bold text-slate-800">Módulo 6</h2>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Afuera y adentro 1</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/af1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">Preferencias Apostólicas Universales</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">Entregada</span>
+                        </div>
+                        <p><p>La preferencia apostólica universal que más se acopla a mi vida es cuidar la casa común. Me interesa mucho el tema ambiental, los bosques y la importancia del agua, así como luchar por una ley de aguas consciente en Guatemala. Sé los retos que implica cumplir con cuidar la casa común desde pequeñas acciones personales; pero, sobre todo, creo que el verdadero cambio está en la gran industria. El cuidar, preservar y recuperar el medio ambiente no tiene por qué estar peleado con la industria. Considero que es importante el avance industrial y el desarrollo, pero no puede ser a costa de la destrucción de nuestro planeta; debe manejarse de manera sostenible. Es posible y debe hacerse.</p></p>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/pe1.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="px-6 py-4 bg-slate-50 border-b border-gray-200 flex justify-between items-center">
+                            <h3 class="font-semibold text-lg text-slate-700">PROYECTO DE INVESTIGACIÓN: Modos de entender y relacionarnos...</h3>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 border border-red-200">No Entregada</span>
+                        </div>
+                        <div class="p-6 bg-gray-50"><div class="iframe-container"><iframe src="./pdfs/m6_proyecto.pdf" height="500px" width="100%" frameborder="0"></iframe></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: REFLEXIÓN FINAL -->
+            <section id="sec-reflexion" class="content-section hidden section-fade">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-slate-800">Reflexión Final</h2>
+                    <p class="text-gray-500 mt-2">Documento final redactado sobre los aprendizajes del curso.</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h3 class="block text-lg font-semibold text-slate-700 mb-4 border-b pb-2">1. Aprendizajes que inciden en mi historia personal</h3>
+                        <div class="prose text-gray-700 leading-relaxed">
+                            <p><i>Durante el recorrido por las unidades de este curso, he experimentado una profunda transformación en la manera de concebir mi identidad, mi origen y las dinámicas cotidianas de mi vida. En mis primeros años, influenciado por la doctrina religiosa familiar, asumía la existencia desde una visión simplificada y predeterminada donde las acciones se orientaban únicamente a un destino prometido de premio o castigo. Sin embargo, la confrontación filosófica me llevó a comprender que no poseemos un sentido rígido ni impuesto por el universo; por el contrario, la falta de un propósito preestablecido nos concede la libertad de forjar y autoimponer nuestro propio significado.
+Esta evolución reflexiva me ha permitido conciliar mi herencia familiar —marcada por vertientes dinámicas entre la tradición revolucionaria de mi bisabuelo Lino en la gesta de 1944 y las raíces conservadoras de mi otro bisabuelo— con una postura personal centrada en el pensamiento crítico, la curiosidad científica y la defensa de la libertad de expresión. Asimismo, el estudio de la filosofía de la vida cotidiana y la logoterapia de Viktor Frankl me enseñó que la plenitud no requiere de hazañas extraordinarias o reconocimientos masivos, sino de la actitud con la que asumimos el "aquí y ahora": disfrutar un café, compartir con la familia o realizar un trabajo digno para construir un futuro compartido.
+Un aprendizaje crucial en mi historia personal ha sido el abordaje de los límites de la vida, el dolor y la finitud humana. A través de las reflexiones familiares e historias compartidas sobre la enfermedad y el duelo, comprendí que el sufrimiento es una realidad inevitable que no debe negarse ni silenciarse. Aceptar nuestro "haber de morir" y entender que la existencia tiene un tiempo limitado no destruye nuestros proyectos; al contrario, es precisamente esa finitud la que le otorga un valor reconfortante y urgente a cada instante de nuestras vidas.
+</i></p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h3 class="block text-lg font-semibold text-slate-700 mb-1">2. Implicaciones de mi carrera profesional</h3>
+                        <p class="text-sm text-gray-500 mb-4 border-b pb-2">Que influyen en mi existencia y en la convivencia con los demás.</p>
+                        <div class="prose text-gray-700 leading-relaxed">
+                            <p><i>Como estudiante avanzado con formación en Profesorado de Enseñanza Media (PEM y TAE, PEM en PFM) y en camino hacia la Ingeniería, mi desarrollo académico ha estado intrínsecamente ligado al compromiso social y al trabajo técnico resolutivo. La práctica en mantenimiento y reparación de equipos informáticos e impresoras representa una extensión de mi capacidad para resolver problemas y generar fuentes alternativas de ingreso.
+No obstante, el análisis de la construcción social del "Yo" de Peña-Muñante me alertó sobre el peligro de la "reificación" o cosificación de la identidad. Durante mi trayectoria laboral he enfrentado la incertidumbre de contratos temporales que vencen cada 31 de diciembre y los desafíos presupuestarios del hogar. El aprendizaje filosófico me exige distanciarme reflexivamente de estas etiquetas: realizo una labor temporal y enfrento limitaciones económicas, pero no soy la precariedad de mi contrato ni las circunstancias externas de vulnerabilidad.
+En términos de convivencia, la profesionalización la concibo bajo los principios ignacianos de autorrealización y servicio al prójimo. La capacidad técnica y analítica debe estar subordinada a una brújula ética constante que promueva la solidaridad y la justicia social. El ejercicio profesional no busca únicamente la acumulación monetaria, sino el fortalecimiento de la comunidad, evitando que las exigencias del mercado conviertan el trabajo en una rutina vacía de subsistencia.
+</i></p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h3 class="block text-lg font-semibold text-slate-700 mb-1">3. Visión a futuro</h3>
+                        <p class="text-sm text-gray-500 mb-4 border-b pb-2">Trascendencia de mi convivencia con el entorno.</p>
+                        <div class="prose text-gray-700 leading-relaxed">
+                            <p><i>Mi visión de futuro integra una trascendencia ética, ecológica y comunitaria. En el ámbito ambiental, asumo una postura "ecológica y expansionista de la vida" inspirada en las reflexiones sobre el cuidado de la casa común y la encíclica Laudato Si'. Entiendo que el ser humano no es el dueño ni el centro superior de la naturaleza, sino una parte consciente de la evolución con la responsabilidad ética de preservar y proteger el planeta para las futuras generaciones. Esto exige rechazar la cultura del descarte y adoptar un estilo de vida sostenible que vincule el cuidado del medio ambiente con la lucha contra las desigualdades.
+En el plano social, la trascendencia implica mantener una voz de indignación ética activa frente a las injusticias estructurales. Mi análisis sobre las formas de esclavitud moderna —como el confinamiento en el empleo informal y la servidumbre doméstica "puertas adentro"— reafirma mi convicción de que la libertad y la dignidad humana deben defenderse sin ambigüedades, denunciando todo sistema que despoje a las personas de sus derechos fundamentales.
+Finalmente, de cara a mi futuro personal, aspiro a consolidar mi graduación en Ingeniería, estabilizar mis proyectos laborales y formar un hogar fundamentado en la responsabilidad compartida y el afecto. Apoyándome en las enseñanzas de Fernando Savater sobre la libertad como destino, reconozco que mis elecciones conscientes son las que forjan mi camino. No espero un destino garantizado, sino que asumo con madurez la autoría de mis actos para construir una vida plena, sustentable y al servicio de la comunidad.
+</i></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // Navigation Logic
+        function navigateTo(sectionId) {
+            // Remove active classes from all links
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('nav-active', 'text-white');
+            });
+            
+            // Add active class to clicked link
+            const activeLink = document.getElementById(`nav-${sectionId}`);
+            if (activeLink) {
+                activeLink.classList.add('nav-active', 'text-white');
+            }
+
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show target section
+            const targetSection = document.getElementById(`sec-${sectionId}`);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                // Scroll main area to top
+                document.querySelector('main').scrollTo(0, 0);
+            }
+
+            // Close mobile menu if it is open
+            if (window.innerWidth < 768) {
+                closeMobileMenu();
+            }
+        }
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const overlay = document.getElementById('sidebar-overlay');
+        const sidebar = document.getElementById('sidebar');
+
+        btn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+
+        function closeMobileMenu() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        }
+
+        overlay.addEventListener('click', closeMobileMenu);
+    </script>
+</body>
+</html>
